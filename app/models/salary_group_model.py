@@ -10,7 +10,8 @@ class SalaryGroup(Base):
     basic_salary = Column(String, nullable=False)
     HRA = Column(Float, nullable=False) #House Rent Allowance
     MA = Column(Float, nullable=False) #Medical Allowance
-    
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+
     employees = relationship('Employee', backref='salary_group', lazy=True)
 
 

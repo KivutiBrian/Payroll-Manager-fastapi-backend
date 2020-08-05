@@ -12,6 +12,6 @@ class User(Base):
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
     password = Column(String, nullable=False)
-    active = Column(String, nullable=False)
+    active = Column(String, default=True, nullable=False)
     created_at = Column(String, nullable=False, default=func.now())
 
