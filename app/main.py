@@ -2,7 +2,9 @@ from fastapi import FastAPI
 
 #database setup
 from settings.db_setup import Base, engine
-from models.user_model import UserModel
+from models.user_model import User
+from models.employee_model import Employee
+from models.salary_group_model import SalaryGroup
 Base.metadata.create_all(bind=engine)
 
 # routes imports

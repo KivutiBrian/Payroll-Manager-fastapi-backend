@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import func
 
 
-class UserModel(Base):
+class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True, nullable=False)
@@ -14,3 +14,4 @@ class UserModel(Base):
     password = Column(String, nullable=False)
     active = Column(String, nullable=False)
     created_at = Column(String, nullable=False, default=func.now())
+
