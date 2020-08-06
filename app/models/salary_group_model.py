@@ -12,7 +12,7 @@ class SalaryGroup(Base):
     MA = Column(Float, nullable=False) #Medical Allowance
     created_at = Column(DateTime, default=func.now(), nullable=False)
 
-    employees = relationship('Employee', backref='salary_group', lazy=True)
+    employees = relationship('Employee', backref='group', lazy=True)
 
 
 

@@ -37,13 +37,16 @@ class EmployeeService:
     @staticmethod
     def update_employee_record(data,employee_id:int, db:Session):
         """update employee record"""
-        pass
-
+        record = db.query(Employee).filter(Employee.id == employee_id ).first()
+        if not record:
+            raise HTTPException(status_code=400, detail='No record matches the id provided')
 
     @staticmethod
     def deactivate_employee(employee_id:int, db:Session):
         """deactivate an employee"""
         record = db.query(Employee).filter(Employee.id == employee_id ).first()
+        if not record:
+            raise HTTPException(status_code=400, detail='No record matches the id provided')
         # set the active status to false
         record.active = False
         db.commit()
