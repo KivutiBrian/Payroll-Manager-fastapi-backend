@@ -8,7 +8,7 @@ class BaseEmployee(BaseModel):
     last_name: str
     primary_phone_number: str
     secondary_phone_number: str
-    email: str
+    email_address: str
     
 
 class CreateEmployee(BaseEmployee):

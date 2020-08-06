@@ -22,7 +22,7 @@ class EmployeeService:
     @staticmethod
     def create_employee(data:CreateEmployee, db:Session):
         """create a new employee"""
-        email = db.query(Employee).filter(Employee.email==data.email).first()
+        email = db.query(Employee).filter(Employee.email_address==data.email_address).first()
         if email:
             raise HTTPException(status_code=400, detail='email taken!')
         
@@ -30,7 +30,7 @@ class EmployeeService:
         record = Employee(**data.dict())
         db.add(record)
         db.commit()
-        db.refresh()
+        db.refresh(record)
         return record
 
 
