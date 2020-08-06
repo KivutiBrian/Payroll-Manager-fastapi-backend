@@ -25,12 +25,11 @@ app.include_router(
 )
 
 app.include_router(
-    users_router.router,
-    prefix='/salary-group',
+    salary_group.router,
+    prefix='/salary-groups',
     tags=['Salary Group Operations'],
     responses={200:{'description':'Ok'}, 201:{'description':'Created'}, 400:{'description':'Bad Request'}, 401:{'desription':'Unauthorized'}}
 )
-
 
 
 app.include_router(
