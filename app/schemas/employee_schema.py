@@ -29,4 +29,13 @@ class EmployeeOut(BaseEmployee):
     class Config:
         orm_mode = True
 
+class EmployeeOut2(BaseEmployee):
+    id: int
+    created_at: Optional[datetime]
+    active: bool
+    
+    class Config:
+        orm_mode = True
+
+
     

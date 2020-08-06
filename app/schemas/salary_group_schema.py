@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
-from schemas.employee_schema import EmployeeOut
+from schemas.employee_schema import EmployeeOut2
 
 class SalaryGroupBase(BaseModel):
     title: str
@@ -15,7 +15,7 @@ class SalaryGroupCreate(SalaryGroupBase):
 class SalaryGroupOut(SalaryGroupBase):
     id: int
     created_at: Optional[datetime]
-    employees: List[EmployeeOut] = []
+    employees: List[EmployeeOut2] = []
 
     class Config:
         orm_mode = True
