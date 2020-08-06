@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
-from .employee_schema import EmployeeOut
+from schemas.employee_schema import EmployeeOut
 
 class SalaryGroupBase(BaseModel):
     title: str
