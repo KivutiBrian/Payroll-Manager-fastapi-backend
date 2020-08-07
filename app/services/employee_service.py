@@ -15,7 +15,7 @@ class EmployeeService:
         """return a employee that matches emplyee_id"""
         record = db.query(Employee).filter(Employee.id == employee_id).first()
         if not record:
-            raise HTTPException(status_code=400, details=f'No record with employee_id {employee_id}')
+            raise HTTPException(status_code=400, detail=f'No record with employee_id {employee_id}')
 
         return record
 

@@ -3,10 +3,13 @@ from typing import List, Optional
 from datetime import datetime
 
 class SalaryGroup(BaseModel):
-    title: str
+    title: str 
     basic_salary: float
     HRA: float
     MA: float
+
+    class Config:
+        orm_mode = True
 
 class BaseEmployee(BaseModel):
     surname: str
