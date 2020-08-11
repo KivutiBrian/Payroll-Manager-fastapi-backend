@@ -8,12 +8,21 @@ from models.salary_group_model import SalaryGroup
 Base.metadata.create_all(bind=engine)
 
 # routes imports
-from routes import (users_router, employees_router, salary_group,payroll_router)
+from routes import (users_router, employees_router, salary_group,payroll_router, auth)
 
 app = FastAPI(
     title="Payroll System API",
     description="Backend for a payroll management system",
     redoc_url='/'
+)
+
+
+app.include_router(
+    auth.router,
+    prefix='/auth',
+    tags=['Auth'],
+    responses={200:{'description':'Ok'}, 201:{'description':'Created'}, 400:{'description':'Bad Request'}, 401:{'desription':'Unauthorized'}}
+
 )
 
 # register all routes
